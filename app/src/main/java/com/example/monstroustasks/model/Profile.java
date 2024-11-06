@@ -56,7 +56,7 @@ public class Profile {
     }
 
     public int getHighScore() {
-        return 0;
+        return getTotalEasy() + (2*getTotalMedium() + (3*getTotalHard()));
     }
 
     @NonNull

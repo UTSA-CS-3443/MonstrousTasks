@@ -14,7 +14,12 @@ public class TaskList {
     }
 
     public void removeTask(String taskName) {
-
+        for (int i = 0; i < taskList.size(); i++) {
+            if (taskList.get(i).getTaskName().equals(taskName)) {
+                taskList.remove(i);
+                return;
+            }
+        }
     }
 
     public void saveTasks() {
@@ -27,11 +32,10 @@ public class TaskList {
     }
 
     public void setTaskList(ArrayList<Task> taskList) {
-
+        this.taskList = taskList;
     }
 
     public int getSize() {
-
-        return 0;
+        return taskList.size();
     }
 }
