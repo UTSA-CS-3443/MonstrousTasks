@@ -14,7 +14,7 @@ public class TaskList {
     }
 
     public void removeTask(String taskName) {
-        for (int i = 0; i < taskList.size(); i++) {
+        for (int i = 0; i < this.getSize(); i++) {
             if (taskList.get(i).getTaskName().equals(taskName)) {
                 taskList.remove(i);
                 return;
@@ -27,8 +27,7 @@ public class TaskList {
     }
 
     public ArrayList<Task> getTaskList() {
-
-        return new ArrayList<Task>();
+        return this.taskList;
     }
 
     public void setTaskList(ArrayList<Task> taskList) {
