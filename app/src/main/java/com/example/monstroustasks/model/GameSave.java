@@ -1,22 +1,12 @@
 package com.example.monstroustasks.model;
 
 public class GameSave {
-    int sessionID;
     int easy, medium, hard;
 
-    GameSave(int sessionID, int easy, int medium, int hard) {
-        this.sessionID = sessionID;
+    GameSave(int easy, int medium, int hard) {
         this.easy = easy;
         this.medium = medium;
         this.hard = hard;
-    }
-
-    public int getSessionID() {
-        return this.sessionID;
-    }
-
-    public void setSessionID(int sessionID) {
-        this.sessionID = sessionID;
     }
 
     public int getEasy() {
