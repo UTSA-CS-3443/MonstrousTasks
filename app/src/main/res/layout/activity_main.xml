@@ -1,38 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    tools:context=".MainActivity">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@drawable/logo"/>
+
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/start_session"
-            android:text="Start Session"/>
+            style="@style/MyButtonStyle"
+            android:text="Start Session" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/profile"
+            style="@style/MyButtonStyle"
             android:text="Profile"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/settings"
+            style="@style/MyButtonStyle"
             android:text="Settings"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/credits"
+            style="@style/MyButtonStyle"
             android:text="Credits"/>
 
         <ImageView
