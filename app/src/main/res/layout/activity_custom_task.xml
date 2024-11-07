@@ -1,12 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center">
 
+
     <RelativeLayout
         android:layout_width="500dp"
         android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_centerVertical="true"
+            android:layout_width="412dp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+
+                android:layout_width="412dp"
+                android:layout_height="wrap_content"
+                android:hint="Add a New Task Here: " />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider"
+                android:layout_width="412dp"
+                android:layout_height="match_parent"
+                android:stepSize="1"
+                android:valueFrom="0"
+                android:valueTo="2"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:hint="Easy"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:hint="     Medium"
+                    android:textColorHint="@color/black" />
+
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:hint="      Hard"
+                    android:textColorHint="@color/black" />
+
+            </LinearLayout>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
 
         <ImageView
             android:layout_width="414dp"
@@ -16,15 +77,8 @@
             android:layout_marginBottom="-120dp"
             android:src="@drawable/bottom_border" />
 
-        <Button
-            style="@style/MyButtonStyle"
-            android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="Create a Task" />
-
     </RelativeLayout>
+
 
 
 </LinearLayout>
