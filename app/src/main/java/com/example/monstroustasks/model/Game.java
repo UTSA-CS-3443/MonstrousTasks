@@ -55,7 +55,8 @@ public class Game {
     public void updateHealth() {
         int health = 0;
         for (int i = 0; i < this.getMonsters().size(); i++) {
-            health += this.getMonsters().get(i).getDifficulty();
+            if (this.getMonsters().get(i).getAlive())
+                health += this.getMonsters().get(i).getDifficulty();
         }
         this.setHealth(health);
     }
