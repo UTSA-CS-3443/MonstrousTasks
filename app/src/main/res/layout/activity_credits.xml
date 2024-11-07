@@ -12,28 +12,24 @@
         android:layout_gravity="center"
         android:src="@drawable/credits"/>
     <TextView
-        android:id="@+id/text_view_id"
-        android:layout_height="wrap_content"
+        android:id="@+id/text_view_id"android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:textSize="48dp"
         android:text="CREDITS" />
     <TextView
-        android:id="@+id/text_view_id"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:textSize="30dp"
         android:text="Designer: Adam Van Wagoner" />
     <TextView
-        android:id="@+id/text_view_id"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:textSize="30dp"
         android:text="Tester: Anthony Pena" />
     <TextView
-        android:id="@+id/text_view_id"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
@@ -41,14 +37,12 @@
         android:text="Manager: Adam Van Wagoner
 " />
     <TextView
-        android:id="@+id/text_view_id"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:textSize="30dp"
         android:text="Developer: Declan Petershack" />
     <TextView
-        android:id="@+id/text_view_id"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
