@@ -4,11 +4,27 @@
     android:layout_height="match_parent"
     android:layout_gravity="center">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create a Task"
-        android:layout_gravity="center_vertical"
-        style="@style/MyButtonStyle" />
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="414dp"
+            android:layout_height="343dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="-120dp"
+            android:src="@drawable/bottom_border" />
+
+        <Button
+            style="@style/MyButtonStyle"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Create a Task" />
+
+    </RelativeLayout>
+
 
 </LinearLayout>
