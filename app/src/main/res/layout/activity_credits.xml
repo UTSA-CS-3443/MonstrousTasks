@@ -9,9 +9,10 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="230dp"
         android:layout_gravity="center"
-        android:src="@drawable/credits"/>
+        android:src="@drawable/credits" />
+
     <TextView
         android:id="@+id/text_view_id"
         android:layout_height="wrap_content"
@@ -51,11 +52,13 @@
         android:textSize="30dp"
         android:text="Developer: Carlos Moya" />
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
         android:id="@+id/home_button"
-        android:text="Home"/>
+        android:backgroundTint="#4CAF50"
+        android:text="Home"
+        android:textStyle="bold" />
 
     <ImageView
             android:layout_width="409dp"
