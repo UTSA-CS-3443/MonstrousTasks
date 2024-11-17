@@ -101,12 +101,3 @@
             android:textStyle="bold"
             app:strokeWidth="2dp"/>
 
-
-    </LinearLayout>
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="110dp"
-        android:layout_gravity="center"
-        android:src="@drawable/bottom_border"/>
-
-</LinearLayout>
