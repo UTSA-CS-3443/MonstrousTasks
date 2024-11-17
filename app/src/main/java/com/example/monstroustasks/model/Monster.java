@@ -6,7 +6,7 @@ public class Monster extends Task {
     boolean alive;
     int id;
 
-    Monster(Task task) {
+    public Monster(Task task) {
         super(task.getTaskName(), task.getDifficulty());
         this.alive = true;
         switch (task.getDifficulty()) {
