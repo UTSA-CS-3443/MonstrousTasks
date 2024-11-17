@@ -47,3 +47,5 @@
                 android:text="Home"
                 android:textStyle="bold"/>
         </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
