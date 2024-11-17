@@ -64,7 +64,21 @@
                     android:textColorHint="@color/black" />
 
             </LinearLayout>
-
+            <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:paddingTop="80dp"
+                xmlns:android="http://schemas.android.com/apk/res/android">
+            <Button
+                android:id="@+id/credits"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#4CAF50"
+                android:text="Confirm"
+                android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
