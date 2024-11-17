@@ -1,5 +1,6 @@
 package com.example.monstroustasks;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,9 +28,9 @@ public class GameActivity extends AppCompatActivity {
         ArrayList<Monster> monsters = new ArrayList<Monster>();
 
         for (int i = 0; i < 5; i++) {
-            if (savedInstanceState.containsKey(String.format("task%d", i+1))) {
-                String taskName = savedInstanceState.getString(String.format("task%d", i+1)).split(",")[0];
-                int difficulty = Integer.parseInt(savedInstanceState.getString(String.format("task%d", i+1)).split(",")[1]);
+            if (getIntent().getExtras().containsKey(String.format("task%d", i+1))) {
+                String taskName = getIntent().getExtras().getString(String.format("task%d", i+1)).split(",")[0];
+                int difficulty = Integer.parseInt(getIntent().getExtras().getString(String.format("task%d", i+1)).split(",")[1]);
                 monsters.add(new Monster(new Task(taskName, difficulty)));
             }
         }
@@ -53,9 +54,11 @@ public class GameActivity extends AppCompatActivity {
                     if (completed[0]) {
                         button.setBackgroundTintList(getColorStateList(R.color.green));
                         button.setTextColor(getColorStateList(R.color.white));
+                        monster.setVisibility(View.INVISIBLE);
                     } else {
                         button.setBackgroundTintList(getColorStateList(R.color.white));
                         button.setTextColor(getColorStateList(R.color.black));
+                        monster.setVisibility(View.VISIBLE);
                     }
                 }
             });
@@ -75,11 +78,21 @@ public class GameActivity extends AppCompatActivity {
             monster.setImageResource(getResources().getIdentifier(String.format("%s_%d", difficulty, monsters.get(i).getId()), "drawable", getPackageName()));
 
             monster.setAdjustViewBounds(true);
-            monster.setMaxWidth(100);
-            monster.setMaxHeight(100);
+            monster.setMaxWidth(200);
+            monster.setMaxHeight(200);
 
             monsterContainer.addView(monster);
             taskContainer.addView(button);
         }
+
+        Button endGame = findViewById(R.id.end_game_button);
+
+        endGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(GameActivity.this, EndGameActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }
