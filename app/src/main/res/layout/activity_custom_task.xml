@@ -70,7 +70,7 @@
                 android:orientation="vertical"
                 android:layout_gravity="center"
                 android:paddingTop="80dp"
-                xmlns:android="http://schemas.android.com/apk/res/android">
+                xmlns:android="http://schemas.android.com/apk/res/android"/>
             <Button
                 android:id="@+id/credits"
                 android:layout_width="140dp"
