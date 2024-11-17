@@ -46,11 +46,10 @@
             android:backgroundTint="#4CAF50"
             android:text="Credits"
             android:textStyle="bold"/>
-
         <ImageView
             android:layout_width="409dp"
             android:layout_height="280dp"
             android:src="@drawable/bottom_border"/>
 
 
-</LinearLayout>
+    </LinearLayout>
