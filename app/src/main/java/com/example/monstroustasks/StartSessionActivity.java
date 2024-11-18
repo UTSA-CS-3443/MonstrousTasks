@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.monstroustasks.model.Task;
+import com.example.monstroustasks.model.TaskList;
 
 public class StartSessionActivity extends AppCompatActivity {
 
@@ -22,6 +23,9 @@ public class StartSessionActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_session);
+
+        TaskList taskList = new TaskList();
+        taskList.loadTasks(this);
 
         Button home_button = findViewById(R.id.ss_home_button);
 
