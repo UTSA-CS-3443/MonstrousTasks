@@ -11,78 +11,21 @@
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:layout_gravity="center"
-        android:text="Select task to delete"
+        android:text="Select Tasks to Delete"
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold" />
     <ScrollView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content">
+        android:layout_height="400dp"
+        android:layout_width="match_parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:id="@+id/task_container"
             >
-            <Button
-                android:id="@+id/HW1"
-                android:layout_width="400dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:backgroundTint="#fff"
-                android:text="Take out trash        Difficulty: 1"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:strokeColor="@color/black"
-                app:strokeWidth="2dp"/>
 
-            <Button
-                android:id="@+id/HW2"
-                android:layout_width="400dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:backgroundTint="#fff"
-                android:text="Homework         Difficulty: 2"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:strokeColor="@color/black"
-                app:strokeWidth="2dp"/>
-
-            <Button
-                android:id="@+id/HW3"
-                android:layout_width="400dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:backgroundTint="#fff"
-                android:text="Work out         Difficulty: 3"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:strokeColor="@color/black"
-                app:strokeWidth="2dp"/>
-
-            <Button
-                android:id="@+id/HW4"
-                android:layout_width="400dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:backgroundTint="#fff"
-                android:text="Homework         Difficulty: 2"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:strokeColor="@color/black"
-                app:strokeWidth="2dp"/>
-
-            <Button
-                android:id="@+id/HW5"
-                android:layout_width="400dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:backgroundTint="#fff"
-                android:text="Clean Room         Difficulty: 1"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:strokeColor="@color/black"
-                app:strokeWidth="2dp"/>
         </LinearLayout>
     </ScrollView>
     <LinearLayout
@@ -90,16 +33,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
         <Button
-            android:id="@+id/ss_home_button"
+            android:id="@+id/confirm_button"
             android:layout_width="160dp"
             android:layout_height="60dp"
             android:layout_gravity="left"
-            android:backgroundTint="#fff"
-            android:strokeColor="@color/black"
+            android:backgroundTint="@color/red"
             android:text="Confirm"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:strokeWidth="2dp"/>
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 </LinearLayout>

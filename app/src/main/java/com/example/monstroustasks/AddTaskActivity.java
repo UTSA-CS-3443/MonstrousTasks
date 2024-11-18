@@ -44,6 +44,10 @@ public class AddTaskActivity extends AppCompatActivity {
                     Toast toast = new Toast(AddTaskActivity.this);
                     toast.setText("Found identical task. Try another task!");
                     toast.setDuration(Toast.LENGTH_SHORT);
+                } else if (taskName.length() == 0) {
+                    Toast toast = new Toast(AddTaskActivity.this);
+                    toast.setText("Text field is empty!");
+                    toast.setDuration(Toast.LENGTH_SHORT);
                 } else {
                     taskList.addTask(taskName, difficulty);
                     try {
