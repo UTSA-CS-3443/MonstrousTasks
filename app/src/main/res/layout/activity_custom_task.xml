@@ -34,8 +34,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:clickable="false"
+                android:focusable="false">
 
+                <!-- First EditText -->
                 <EditText
                     android:id="@+id/editText1"
                     android:layout_width="0dp"
@@ -43,8 +46,14 @@
                     android:layout_weight="1"
                     android:gravity="left"
                     android:hint="Easy"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/black"
+                    android:focusable="false"
+                    android:cursorVisible="false"
+                    android:longClickable="false"
+                    android:clickable="false"
+                    android:background="@null" />
 
+                <!-- Second EditText -->
                 <EditText
                     android:id="@+id/editText2"
                     android:layout_width="0dp"
@@ -52,8 +61,14 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:hint="     Medium"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/black"
+                    android:focusable="false"
+                    android:cursorVisible="false"
+                    android:longClickable="false"
+                    android:clickable="false"
+                    android:background="@null" />
 
+                <!-- Third EditText -->
                 <EditText
                     android:id="@+id/editText3"
                     android:layout_width="0dp"
@@ -61,9 +76,15 @@
                     android:layout_weight="1"
                     android:gravity="right"
                     android:hint="      Hard"
-                    android:textColorHint="@color/black" />
+                    android:textColorHint="@color/black"
+                    android:focusable="false"
+                    android:cursorVisible="false"
+                    android:longClickable="false"
+                    android:clickable="false"
+                    android:background="@null" />
 
             </LinearLayout>
+
             <LinearLayout xmlns:tools="http://schemas.android.com/tools"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
