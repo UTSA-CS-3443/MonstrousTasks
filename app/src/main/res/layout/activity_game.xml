@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="GAME SESSION"
+        android:paddingTop="20dp"
         android:textSize="40sp"
         tools:ignore="HardcodedText" />
 
@@ -41,10 +42,9 @@
         tools:ignore="HardcodedText" />
 
     <ImageView
-        android:layout_width="414dp"
-        android:layout_height="358dp"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="-120dp"
-        android:src="@drawable/bottom_border" />
+        android:layout_width="415sp"
+        android:layout_height="100dp"
+        android:src="@drawable/bottom_border"
+        android:layout_marginTop="120dp"/>
 
 </LinearLayout>
