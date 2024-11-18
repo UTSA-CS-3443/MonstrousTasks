@@ -30,11 +30,11 @@ public class Task {
     public String getDifficultyString() {
         switch (this.difficulty) {
             case 1:
-                return "Easy";
+                return "easy";
             case 2:
-                return "Medium";
+                return "medium";
             case 3:
-                return "Hard";
+                return "hard";
         }
         return "";
     }

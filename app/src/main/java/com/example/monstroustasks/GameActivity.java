@@ -15,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.monstroustasks.model.Monster;
 import com.example.monstroustasks.model.Task;
+import com.example.monstroustasks.model.TaskList;
 
 import java.util.ArrayList;
 
@@ -26,15 +27,20 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         ArrayList<Monster> monsters = new ArrayList<Monster>();
+        TaskList taskList = new TaskList();
+        taskList.loadTasks(this);
+        int totalHealth = 0;
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < taskList.getSize(); i++) {
             if (getIntent().getExtras().containsKey(String.format("task_%d", i+1))) {
                 String taskName = getIntent().getExtras().getString(String.format("task_%d", i+1)).split(",")[0];
                 int difficulty = Integer.parseInt(getIntent().getExtras().getString(String.format("task_%d", i+1)).split(",")[1]);
                 monsters.add(new Monster(new Task(taskName, difficulty)));
+                totalHealth += difficulty + 1;
             }
         }
 
+        final int[] health = {totalHealth};
 
         LinearLayout monsterContainer = findViewById(R.id.monster_container);
         LinearLayout taskContainer = findViewById(R.id.task_container);
@@ -47,6 +53,7 @@ public class GameActivity extends AppCompatActivity {
             button.setText(monsters.get(i).getTaskName());
             button.setTextColor(getColorStateList(R.color.black));
             final boolean[] completed = {false};
+            int finalI = i;
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -55,26 +62,17 @@ public class GameActivity extends AppCompatActivity {
                         button.setBackgroundTintList(getColorStateList(R.color.green));
                         button.setTextColor(getColorStateList(R.color.white));
                         monster.setVisibility(View.INVISIBLE);
+                        health[0] -= monsters.get(finalI).getDifficulty() + 1;
                     } else {
                         button.setBackgroundTintList(getColorStateList(R.color.white));
                         button.setTextColor(getColorStateList(R.color.black));
                         monster.setVisibility(View.VISIBLE);
+                        health[0] += monsters.get(finalI).getDifficulty() + 1;
                     }
                 }
             });
             taskButtons.add(button);
-            String difficulty;
-            switch (monsters.get(i).getDifficulty()) {
-                case 1:
-                    difficulty = "easy";
-                    break;
-                case 2:
-                    difficulty = "medium";
-                    break;
-                default:
-                    difficulty = "hard";
-                    break;
-            }
+            String difficulty = monsters.get(i).getDifficultyString();
             monster.setImageResource(getResources().getIdentifier(String.format("%s_%d", difficulty, monsters.get(i).getId()), "drawable", getPackageName()));
 
             monster.setAdjustViewBounds(true);

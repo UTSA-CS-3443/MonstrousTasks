@@ -40,7 +40,7 @@ public class TaskList {
             Log.e("ERROR: loadTasks()", "Could not find tasks.csv... creating tasks.csv.");
 
             try {
-                OutputStream outputStream = context.openFileOutput("tasks.csv", Context.MODE_APPEND);
+                OutputStream outputStream = context.openFileOutput("tasks.csv", Context.MODE_PRIVATE);
                 OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
                 BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
                 bufferedWriter.write("Homework,3\n" +
@@ -92,8 +92,30 @@ public class TaskList {
         }
     }
 
-    public void saveTasks() {
+    public void saveTasks(Context context) throws FileNotFoundException {
+        try {
+            OutputStream outputStream = context.openFileOutput("tasks.csv", Context.MODE_PRIVATE);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+            for (int i = 0; i < this.getSize(); i++) {
+                bufferedWriter.write(String.format("%s\n", this.getTaskList().get(i).toString()));
+            }
 
+            bufferedWriter.close();
+            outputStreamWriter.close();
+            outputStream.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean findTask(String taskName) {
+        for (int i = 0; i < this.getSize(); i++) {
+            if (taskName.toLowerCase().equals(this.getTaskList().get(i).getTaskName().toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public ArrayList<Task> getTaskList() {
