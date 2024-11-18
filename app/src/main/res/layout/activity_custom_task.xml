@@ -20,7 +20,8 @@
 
                 android:layout_width="412dp"
                 android:layout_height="wrap_content"
-                android:hint="Add a New Task Here: " />
+                android:hint="Add a New Task Here: "
+                tools:ignore="HardcodedText" />
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/slider"

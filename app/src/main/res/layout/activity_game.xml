@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -8,34 +9,42 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GAME SESSION"
         android:layout_gravity="center"
-        android:textSize="40dp"/>
+        android:text="GAME SESSION"
+        android:textSize="40sp"
+        tools:ignore="HardcodedText" />
 
     <LinearLayout
+        android:id="@+id/monster_container"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:orientation="horizontal"
-        android:id="@+id/monster_container"
         android:layout_gravity="center"
-        >
+        android:orientation="horizontal">
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/task_container"
         android:layout_width="wrap_content"
-        android:layout_height="400dp"
-        android:orientation="vertical"
+        android:layout_height="200dp"
         android:layout_gravity="center"
-        android:padding="20dp"
-        android:id="@+id/task_container"/>
+        android:orientation="vertical"
+        android:padding="20dp" />
 
     <Button
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_gravity="center"
         android:text="Complete Session"
+        android:layout_gravity="center"
+        android:backgroundTint="#4CAF50"
         android:id="@+id/end_game_button"
-        />
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:layout_width="414dp"
+        android:layout_height="358dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="-120dp"
+        android:src="@drawable/bottom_border" />
 
 </LinearLayout>
