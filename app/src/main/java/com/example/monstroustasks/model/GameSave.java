@@ -3,7 +3,7 @@ package com.example.monstroustasks.model;
 public class GameSave {
     int easy, medium, hard;
 
-    GameSave(int easy, int medium, int hard) {
+    public GameSave(int easy, int medium, int hard) {
         this.easy = easy;
         this.medium = medium;
         this.hard = hard;
@@ -31,6 +31,10 @@ public class GameSave {
 
     public void setHard(int hard) {
         this.hard = hard;
+    }
+
+    public String toString() {
+        return String.format("%d,%d,%d", this.easy, this.medium, this.hard);
     }
 
 }

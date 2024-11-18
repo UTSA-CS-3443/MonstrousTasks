@@ -39,7 +39,7 @@ public class AddTaskActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String taskName = textField.getText().toString();
-                int difficulty = (int)(slider.getValue() * 2) + 1;
+                int difficulty = (int)(slider.getValue()) + 1;
                 if (taskList.findTask(taskName)) {
                     Toast toast = new Toast(AddTaskActivity.this);
                     toast.setText("Found identical task. Try another task!");

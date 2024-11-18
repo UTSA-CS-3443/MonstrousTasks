@@ -81,6 +81,23 @@ public class Profile {
         }
     }
 
+    public void saveProfile(Context context) throws RuntimeException {
+        try {
+            OutputStream outputStream = context.openFileOutput("profile.csv", Context.MODE_PRIVATE);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+            for (int i = 0; i < this.getSavesSize(); i++) {
+                bufferedWriter.write(String.format("%s\n", this.getGameSaves().get(i).toString()));
+            }
+
+            bufferedWriter.close();
+            outputStreamWriter.close();
+            outputStream.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public ArrayList<GameSave> getGameSaves() {
         return this.saves;
     }

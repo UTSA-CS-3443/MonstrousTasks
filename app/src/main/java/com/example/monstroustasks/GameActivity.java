@@ -36,11 +36,12 @@ public class GameActivity extends AppCompatActivity {
                 String taskName = getIntent().getExtras().getString(String.format("task_%d", i+1)).split(",")[0];
                 int difficulty = Integer.parseInt(getIntent().getExtras().getString(String.format("task_%d", i+1)).split(",")[1]);
                 monsters.add(new Monster(new Task(taskName, difficulty)));
-                totalHealth += difficulty + 1;
+                totalHealth += difficulty;
             }
         }
 
         final int[] health = {totalHealth};
+        int[] monsterCount = {0, 0, 0};
 
         LinearLayout monsterContainer = findViewById(R.id.monster_container);
         LinearLayout taskContainer = findViewById(R.id.task_container);
@@ -62,12 +63,14 @@ public class GameActivity extends AppCompatActivity {
                         button.setBackgroundTintList(getColorStateList(R.color.green));
                         button.setTextColor(getColorStateList(R.color.white));
                         monster.setVisibility(View.INVISIBLE);
-                        health[0] -= monsters.get(finalI).getDifficulty() + 1;
+                        health[0] -= monsters.get(finalI).getDifficulty();
+                        monsterCount[monsters.get(finalI).getDifficulty() - 1]++;
                     } else {
                         button.setBackgroundTintList(getColorStateList(R.color.white));
                         button.setTextColor(getColorStateList(R.color.black));
                         monster.setVisibility(View.VISIBLE);
-                        health[0] += monsters.get(finalI).getDifficulty() + 1;
+                        health[0] += monsters.get(finalI).getDifficulty();
+                        monsterCount[monsters.get(finalI).getDifficulty() - 1]--;
                     }
                 }
             });
@@ -89,6 +92,9 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(GameActivity.this, EndGameActivity.class);
+                i.putExtra("easy", monsterCount[0]);
+                i.putExtra("medium", monsterCount[1]);
+                i.putExtra("hard", monsterCount[2]);
                 startActivity(i);
             }
         });
