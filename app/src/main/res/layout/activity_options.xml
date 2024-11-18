@@ -1,73 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_gravity="center"
-    android:paddingTop="80dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent"
+    android:paddingTop="80dp">
 
+    <!-- Top Image -->
     <ImageView
+        android:id="@+id/top_image"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="16dp"
         android:src="@drawable/easy_1" />
 
+    <!-- Title -->
     <TextView
         android:id="@+id/my_text_view"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
         android:text="Settings"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold" />
-        />
 
+    <!-- Add Custom Tasks Button -->
     <Button
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/green"
         android:id="@+id/add_custom_tasks"
-        android:text="Add Custom Tasks"/>
-
-    <Button
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/red"
+        android:layout_below="@id/my_text_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/green"
+        android:text="Add Custom Tasks" />
+
+    <!-- Delete Custom Tasks Button -->
+    <Button
         android:id="@+id/delete_custom_tasks"
-        android:text="Delete Custom Tasks"/>
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/add_custom_tasks"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/red"
+        android:text="Delete Custom Tasks" />
 
-    <LinearLayout android:layout_height="100dp"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:padding="20dp"
-        android:layout_width="0dp" />
+    <!-- Home Button -->
+    <Button
+        android:id="@+id/home_button"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/delete_custom_tasks"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/green"
+        android:text="Home" />
 
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/green"
-            android:id="@+id/home_button"
-            android:text="Home"
-            />
-
+    <!-- Bottom Image (Pinned to Bottom) -->
     <ImageView
-        android:layout_width="1dp"
-        android:layout_height="25dp"
-        android:layout_gravity="center"
-        android:src="@drawable/bottom_border"/>
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="260dp"
-    android:layout_gravity="center"
-    android:src="@drawable/bottom_border"/>
-
-    </LinearLayout>
-
-
-
-
-
+        android:layout_width="414dp"
+        android:layout_height="343dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="-120dp"
+        android:src="@drawable/bottom_border" />
+</RelativeLayout>
