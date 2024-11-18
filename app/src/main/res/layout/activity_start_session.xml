@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/my_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:text="CHOOSE YOUR BATTLES"
-        android:textColor="@color/black"
-        android:textSize="35sp"
-        android:textStyle="bold" />
     <ScrollView
-        android:layout_height="500dp"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
 
         <LinearLayout
+            android:id="@+id/task_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/task_container"
-            >
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/my_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:paddingTop="20dp"
+                android:text="CHOOSE YOUR BATTLES"
+                android:textColor="@color/black"
+                android:textSize="35sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
+
+
         <Button
             android:id="@+id/ss_home_button"
             android:layout_width="160dp"
@@ -42,7 +45,8 @@
             android:text="Home"
             android:textColor="@color/black"
             android:textStyle="bold"
-            app:strokeWidth="2dp"/>
+            app:strokeWidth="2dp" />
+
         <Button
             android:id="@+id/continue_button"
             android:layout_width="160dp"
@@ -55,11 +59,13 @@
             android:textStyle="bold"
             app:strokeWidth="2dp" />
 
+
     </LinearLayout>
-   <ImageView
-         android:layout_width="400dp"
-        android:layout_height="110dp"
-        android:layout_gravity="center"
-        android:src="@drawable/bottom_border"/>
+
+    <ImageView
+        android:layout_width="415sp"
+        android:layout_height="100dp"
+        android:src="@drawable/bottom_border"
+        android:layout_marginTop="280dp"/>
 
 </LinearLayout>
