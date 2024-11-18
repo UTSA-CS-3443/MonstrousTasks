@@ -17,94 +17,15 @@
         android:textStyle="bold" />
     <ScrollView
         android:layout_height="500dp"
-        android:layout_width="wrap_content">
+        android:layout_width="match_parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:id="@+id/task_container"
             >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/HW1"
-                    android:layout_width="400dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:backgroundTint="@color/white"
-                    android:text="Take Out Trash        Difficulty: 1"
-                    android:hint="Take Out Trash,1"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:strokeColor="@color/black"
-                    app:strokeWidth="2dp"/>
-
-            </LinearLayout>
-    <Button
-        android:id="@+id/HW2"
-        android:layout_width="400dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/white"
-        android:text="Homework         Difficulty: 2"
-        android:hint="Homework,2"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:strokeColor="@color/black"
-        app:strokeWidth="2dp"/>
-
-    <Button
-        android:id="@+id/HW3"
-        android:layout_width="400dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/white"
-        android:text="Work Out         Difficulty: 3"
-        android:hint="Work Out,3"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:strokeColor="@color/black"
-        app:strokeWidth="2dp"/>
-
-    <Button
-        android:id="@+id/HW4"
-        android:layout_width="400dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/white"
-        android:text="Get Groceries         Difficulty: 2"
-        android:hint="Get Groceries,2"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:strokeColor="@color/black"
-        app:strokeWidth="2dp"/>
-
-    <Button
-        android:id="@+id/HW6"
-        android:layout_width="400dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/white"
-        android:text="Be Cool         Difficulty: 1"
-        android:hint="Be Cool,1"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:strokeColor="@color/black"
-        app:strokeWidth="2dp"/>
-            <Button
-                android:id="@+id/HW5"
-                android:layout_width="400dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/white"
-                android:text="Clean Room         Difficulty: 1"
-                android:hint="Clean Room,1"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:strokeColor="@color/black"
-                app:strokeWidth="2dp"/>
         </LinearLayout>
     </ScrollView>
     <LinearLayout

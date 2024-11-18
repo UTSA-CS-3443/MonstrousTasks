@@ -28,9 +28,9 @@ public class GameActivity extends AppCompatActivity {
         ArrayList<Monster> monsters = new ArrayList<Monster>();
 
         for (int i = 0; i < 5; i++) {
-            if (getIntent().getExtras().containsKey(String.format("task%d", i+1))) {
-                String taskName = getIntent().getExtras().getString(String.format("task%d", i+1)).split(",")[0];
-                int difficulty = Integer.parseInt(getIntent().getExtras().getString(String.format("task%d", i+1)).split(",")[1]);
+            if (getIntent().getExtras().containsKey(String.format("task_%d", i+1))) {
+                String taskName = getIntent().getExtras().getString(String.format("task_%d", i+1)).split(",")[0];
+                int difficulty = Integer.parseInt(getIntent().getExtras().getString(String.format("task_%d", i+1)).split(",")[1]);
                 monsters.add(new Monster(new Task(taskName, difficulty)));
             }
         }

@@ -42,7 +42,7 @@ public class Task {
     @NonNull
     @Override
     public String toString() {
-        return "";
+        return String.format("%s,%d", this.getTaskName(), this.getDifficulty());
     }
 
 }
