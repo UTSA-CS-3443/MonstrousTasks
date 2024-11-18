@@ -1,18 +1,84 @@
 package com.example.monstroustasks.model;
 
+import android.content.Context;
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 public class Profile {
     ArrayList<GameSave> saves;
 
-    Profile(ArrayList<GameSave> gameSaves) {
-        this.saves = gameSaves;
+    public Profile() {
     }
 
-    public void loadProfile() {
+    public void loadProfile(Context context) {
+        saves = new ArrayList<>();
+        try {
+            InputStream inputStream = context.openFileInput("profile.csv");
 
+            if (inputStream != null) {
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                String receiveString = "";
+
+                while ((receiveString = bufferedReader.readLine()) != null) {
+                    saves.add(new GameSave(Integer.parseInt(receiveString.split(",")[0]), Integer.parseInt(receiveString.split(",")[1].trim()), Integer.parseInt(receiveString.split(",")[2])));
+                }
+
+                bufferedReader.close();
+                inputStreamReader.close();
+                inputStream.close();
+            }
+        } catch (IOException e) {
+            Log.e("ERROR: loadProfile()", "Could not find tasks.csv... creating placeholder profile.csv.");
+
+            try {
+                OutputStream outputStream = context.openFileOutput("profile.csv", Context.MODE_PRIVATE);
+                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+                BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+                bufferedWriter.write("0,2,1\n" +
+                        "2,4,1\n" +
+                        "0,0,1\n" +
+                        "1,3,2\n" +
+                        "8,0,0\n" +
+                        "2,0,1");
+
+                bufferedWriter.close();
+                outputStreamWriter.close();
+                outputStream.close();
+
+                try {
+                    InputStream inputStream = context.openFileInput("profile.csv");
+
+                    if (inputStream != null) {
+                        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                        String receiveString = "";
+
+                        while ((receiveString = bufferedReader.readLine()) != null) {
+                            saves.add(new GameSave(Integer.parseInt(receiveString.split(",")[0]), Integer.parseInt(receiveString.split(",")[1].trim()), Integer.parseInt(receiveString.split(",")[2])));
+                        }
+
+                        bufferedReader.close();
+                        inputStreamReader.close();
+                        inputStream.close();
+                    }
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            } catch (IOException ed) {
+                Log.e("loadProfile() ERROR", "Uh oh!");
+            }
+        }
     }
 
     public ArrayList<GameSave> getGameSaves() {
@@ -56,7 +122,14 @@ public class Profile {
     }
 
     public int getHighScore() {
-        return getTotalEasy() + (2*getTotalMedium() + (3*getTotalHard()));
+        int max = 0;
+        for (int i = 0; i < this.getGameSaves().size(); i++) {
+            int saveScore = this.getGameSaves().get(i).getEasy() + this.getGameSaves().get(i).getMedium()*2 + this.getGameSaves().get(i).getHard()*3;
+            if (saveScore > max) {
+                max = saveScore;
+            }
+        }
+        return max;
     }
 
     @NonNull
