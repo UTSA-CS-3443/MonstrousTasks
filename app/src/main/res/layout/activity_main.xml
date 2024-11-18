@@ -1,55 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
+<RelativeLayout
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_gravity="center"
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+        <!-- Main Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/bottom_image"
+            android:layout_gravity="center">
+
+                <!-- Logo Image -->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/logo" />
+
+                <!-- Start Session Button -->
+                <Button
+                    android:id="@+id/start_session"
+                    android:layout_width="160dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#4CAF50"
+                    android:text="Start Session"
+                    android:textStyle="bold" />
+
+                <!-- Profile Button -->
+                <Button
+                    android:id="@+id/profile"
+                    android:layout_width="140dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#4CAF50"
+                    android:text="Profile"
+                    android:textStyle="bold" />
+
+                <!-- Settings Button -->
+                <Button
+                    android:id="@+id/settings"
+                    android:layout_width="140dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#4CAF50"
+                    android:text="Settings"
+                    android:textStyle="bold" />
+
+                <!-- Credits Button -->
+                <Button
+                    android:id="@+id/credits"
+                    android:layout_width="140dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#4CAF50"
+                    android:text="Credits"
+                    android:textStyle="bold" />
+        </LinearLayout>
+
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:layout_gravity="center"
-            android:src="@drawable/logo" />
+            android:layout_width="414dp"
+            android:layout_height="343dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="-120dp"
+            android:src="@drawable/bottom_border" />
 
-        <Button
-            android:id="@+id/start_session"
-            android:layout_width="160dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:backgroundTint="#4CAF50"
-            android:text="Start Session"
-            android:textStyle="bold"/>
-
-        <Button
-            android:id="@+id/profile"
-            android:layout_width="140dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:backgroundTint="#4CAF50"
-            android:text="Profile"
-            android:textStyle="bold"/>
-
-        <Button
-            android:id="@+id/settings"
-            android:layout_width="140dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:backgroundTint="#4CAF50"
-            android:text="Settings"
-            android:textStyle="bold"/>
-
-        <Button
-            android:id="@+id/credits"
-            android:layout_width="140dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:backgroundTint="#4CAF50"
-            android:text="Credits"
-            android:textStyle="bold"/>
-        <ImageView
-            android:layout_width="409dp"
-            android:layout_height="280dp"
-            android:src="@drawable/bottom_border"/>
-
-
-    </LinearLayout>
+</RelativeLayout>
