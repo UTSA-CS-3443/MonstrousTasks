@@ -1,6 +1,7 @@
 # Monstrous Tasks
 
 CS 3443 - Bit by Bit
+
 Group members:
 Declan Petershack
 Adam Van Wagoner
