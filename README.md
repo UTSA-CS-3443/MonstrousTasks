@@ -47,7 +47,7 @@ Step2:
 
 -Click on "File" then "Open"
 
--Navigate to the Connect 4 directory and select it
+-Navigate to the Monstrous Tasks directory and select it
 
 Step 3:
 
