@@ -9,3 +9,5 @@ Carlos Moya,
 Anthony Pena
 
 Final Application Programming Project 
+
+DESCRIPTION OF APPLICATION:
