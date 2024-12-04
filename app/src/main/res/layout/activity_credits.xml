@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_gravity="center_horizontal"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:background="@color/white">
 
+    <!-- Main Content -->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="230dp"
@@ -15,56 +15,68 @@
 
     <TextView
         android:id="@+id/text_view_id"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="48dp"
-        android:text="CREDITS" />
+        android:text="CREDITS"
+        android:textSize="48dp" />
+
     <TextView
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="30dp"
-        android:text="Designer: Adam Van Wagoner" />
+        android:text="Designer: Adam Van Wagoner"
+        android:textSize="30dp" />
+
     <TextView
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="30dp"
-        android:text="Tester: Anthony Pena" />
+        android:text="Tester: Anthony Pena"
+        android:textSize="30dp" />
+
     <TextView
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="30dp"
-        android:text="Manager: Adam Van Wagoner
-" />
+        android:text="Manager: Adam Van Wagoner"
+        android:textSize="30dp" />
+
     <TextView
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="30dp"
-        android:text="Developer: Declan Petershack" />
+        android:text="Developer: Declan Petershack"
+        android:textSize="30dp" />
+
     <TextView
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="30dp"
-        android:text="Developer: Carlos Moya" />
+        android:text="Developer: Carlos Moya"
+        android:textSize="30dp" />
+
     <Button
+        android:id="@+id/home_button"
         android:layout_width="160dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:id="@+id/home_button"
         android:backgroundTint="#4CAF50"
         android:text="Home"
         android:textStyle="bold" />
 
+    <!-- Spacer to push the bottom border down -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Bottom Border -->
     <ImageView
-            android:layout_width="409dp"
-            android:layout_height="218dp"
-            android:src="@drawable/bottom_border"/>
-
-
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:src="@drawable/bottom_border"
+        android:scaleType="fitXY"
+        android:layout_gravity="bottom" />
 
 </LinearLayout>

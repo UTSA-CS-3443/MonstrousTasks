@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
+    <!-- Title Text -->
     <TextView
         android:id="@+id/my_text_view"
         android:layout_width="wrap_content"
@@ -15,32 +17,44 @@
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold" />
-    <ScrollView
-        android:layout_height="400dp"
-        android:layout_width="match_parent">
 
+    <!-- Scrollable Task Container -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
         <LinearLayout
+            android:id="@+id/task_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/task_container"
-            >
-
+            android:orientation="vertical">
+            <!-- Tasks will be dynamically added here -->
         </LinearLayout>
     </ScrollView>
+
+    <!-- Button Container -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:gravity="center_horizontal">
+
+        <!-- Confirm Button -->
         <Button
             android:id="@+id/confirm_button"
             android:layout_width="160dp"
             android:layout_height="60dp"
-            android:layout_gravity="left"
             android:backgroundTint="@color/red"
             android:text="Confirm"
             android:textColor="@color/white"
-            android:textStyle="bold"/>
-
+            android:textStyle="bold" />
     </LinearLayout>
+
+    <!-- Bottom Border -->
+    <ImageView
+        android:id="@+id/bottom_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bottom_border"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
 </LinearLayout>

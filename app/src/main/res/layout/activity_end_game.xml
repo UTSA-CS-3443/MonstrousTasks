@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
+    <!-- Top Image -->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="230dp"
         android:layout_gravity="center"
         android:src="@drawable/credits" />
 
-
+    <!-- You Win Text -->
     <TextView
         android:id="@+id/text_view_id"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="48dp"
         android:text="You Win!!" />
 
-
+    <!-- Stats Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +31,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:padding="16dp">
-
 
         <TextView
             android:id="@+id/total_monsters"
@@ -43,7 +42,6 @@
             android:textStyle="bold"
             android:textColor="@color/black" />
 
-
         <TextView
             android:id="@+id/easy_monsters"
             android:layout_width="wrap_content"
@@ -54,7 +52,6 @@
             android:textColor="@color/black"
             android:layout_marginTop="8dp" />
 
-
         <TextView
             android:id="@+id/medium_monsters"
             android:layout_width="wrap_content"
@@ -64,7 +61,6 @@
             android:textSize="16sp"
             android:textColor="@color/black"
             android:layout_marginTop="8dp" />
-
 
         <TextView
             android:id="@+id/hard_monsters"
@@ -87,35 +83,35 @@
             android:textColor="@color/black" />
     </LinearLayout>
 
+    <!-- Spacer to push bottom content down -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
+    <!-- Bottom Section with Bottom Border and Button -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="bottom">
 
-        <RelativeLayout
+        <Button
+            android:id="@+id/home_button"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#4CAF50"
+            android:text="Home"
+            android:textStyle="bold" />
+
+
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="110dp"
+            android:src="@drawable/bottom_border"
+            android:scaleType="fitXY"
+            android:layout_gravity="bottom" />
 
-
-            <ImageView
-                android:id="@+id/bottom_border"
-                android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="-1dp"
-                android:src="@drawable/bottom_border" />
-
-
-            <Button
-                android:id="@+id/home_button"
-                android:layout_width="160dp"
-                android:layout_height="60dp"
-                android:layout_centerHorizontal="true"
-                android:layout_above="@id/bottom_border"
-                android:backgroundTint="#4CAF50"
-                android:text="Home"
-                android:textStyle="bold" />
-        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
