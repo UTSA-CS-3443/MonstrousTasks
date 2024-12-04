@@ -27,7 +27,7 @@ Step 1:
 ***Clone the Repository or download Zip***
 
 ***To Clone***
-
+git clone -b master https://github.com/UTSA-CS-3443/MonstrousTasks.git
 
 ***To download as Zip***
 
@@ -71,4 +71,3 @@ Step 4:
 
 The code for our application is located in the main branch
 
-Final Application Programming Project 
