@@ -27,7 +27,6 @@ public class ProfileActivity extends AppCompatActivity {
         Profile profile = new Profile();
         profile.loadProfile(ProfileActivity.this);
 
-
         home_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
