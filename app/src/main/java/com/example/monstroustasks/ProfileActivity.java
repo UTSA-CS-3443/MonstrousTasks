@@ -22,12 +22,12 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        Button home_button = findViewById(R.id.home_button);
+        Button homeButton = findViewById(R.id.home_button);
 
         Profile profile = new Profile();
         profile.loadProfile(ProfileActivity.this);
 
-        home_button.setOnClickListener(new View.OnClickListener() {
+        homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ProfileActivity.this, MainActivity.class);

@@ -19,12 +19,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button session_button = findViewById(R.id.start_session);
-        Button settings_button = findViewById(R.id.settings);
-        Button profile_button = findViewById(R.id.profile);
-        Button credits_button = findViewById(R.id.credits);
+        Button sessionButton = findViewById(R.id.start_session);
+        Button settingsButton = findViewById(R.id.settings);
+        Button profileButton = findViewById(R.id.profile);
+        Button creditsButton = findViewById(R.id.credits);
 
-        credits_button.setOnClickListener(new View.OnClickListener() {
+        creditsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, CreditsActivity.class);
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        profile_button.setOnClickListener(new View.OnClickListener() {
+        profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, ProfileActivity.class);
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        session_button.setOnClickListener(new View.OnClickListener() {
+        sessionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, StartSessionActivity.class);
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        settings_button.setOnClickListener(new View.OnClickListener() {
+        settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, SettingsActivity.class);
