@@ -82,6 +82,7 @@ Step 6: navigate to settings to view the custom task and delete task buttons if 
 Step 7: open Credits
 
 **Issues**
+
 We had some issues getting all the monsters to fit within the task screen and implementing the scroll view to work properly
 
 **Location**
