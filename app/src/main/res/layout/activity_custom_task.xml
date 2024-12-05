@@ -15,93 +15,100 @@
             android:layout_width="412dp"
             android:layout_height="wrap_content"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editText"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText"
 
-                android:layout_width="412dp"
-                android:layout_height="wrap_content"
-                android:hint="Add a New Task Here: "
-                tools:ignore="HardcodedText" />
+            android:layout_width="412dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="273dp"
+            android:hint="Add a New Task Here: "
+            tools:ignore="HardcodedText" />
 
-            <com.google.android.material.slider.Slider
-                android:id="@+id/slider"
-                android:layout_width="412dp"
-                android:layout_height="match_parent"
-                android:stepSize="1"
-                android:valueFrom="0"
-                android:valueTo="2"
-                tools:ignore="SpeakableTextPresentCheck" />
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider"
+            android:layout_width="412dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-2dp"
+            android:layout_marginBottom="365dp"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="2"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:clickable="false"
-                android:focusable="false">
 
-                <!-- First EditText -->
-                <EditText
-                    android:id="@+id/editText1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:hint="Easy"
-                    android:textColorHint="@color/black"
-                    android:focusable="false"
-                    android:cursorVisible="false"
-                    android:longClickable="false"
-                    android:clickable="false"
-                    android:background="@null" />
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="59dp"
+            android:layout_height="wrap_content"
 
-                <!-- Second EditText -->
-                <EditText
-                    android:id="@+id/editText2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:hint="     Medium"
-                    android:textColorHint="@color/black"
-                    android:focusable="false"
-                    android:cursorVisible="false"
-                    android:longClickable="false"
-                    android:clickable="false"
-                    android:background="@null" />
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="340dp"
+            android:background="@null"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:gravity="left"
+            android:hint="Easy"
+            android:longClickable="false"
+            android:textColorHint="@color/black" />
 
-                <!-- Third EditText -->
-                <EditText
-                    android:id="@+id/editText3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:hint="      Hard"
-                    android:textColorHint="@color/black"
-                    android:focusable="false"
-                    android:cursorVisible="false"
-                    android:longClickable="false"
-                    android:clickable="false"
-                    android:background="@null" />
 
-            </LinearLayout>
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="156dp"
+            android:layout_marginBottom="340dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:gravity="center"
+            android:hint="   Medium"
+            android:longClickable="false"
+            android:textColorHint="@color/black" />
 
-            <LinearLayout
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_gravity="center"
-                android:paddingTop="80dp"/>
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="83dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="89dp"
+            android:layout_marginBottom="342dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:gravity="right"
+            android:hint="      Hard"
+            android:longClickable="false"
+            android:textColorHint="@color/black" />
 
-                <Button
-                android:id="@+id/confirm_button"
-                android:layout_width="140dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:backgroundTint="#4CAF50"
-                android:text="Confirm"
-                android:textStyle="bold"/>
-        </RelativeLayout>
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="128dp"
+            android:layout_marginBottom="147dp"
+            android:backgroundTint="#4CAF50"
+            android:text="Confirm"
+            android:textStyle="bold" />
+
 
 
 
@@ -112,7 +119,7 @@
             android:layout_gravity="bottom"
             android:layout_marginBottom="-120dp"
             android:src="@drawable/bottom_border" />
-
+    </RelativeLayout>
 
 
 
