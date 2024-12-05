@@ -67,6 +67,14 @@ Step 4:
 
 **Instructions: To navigate the application**
 
+Step 1: hit the start activity to bring up list of activities that you can select
+Step 2: select activities you want to keep track of
+Step 3: click on task as you complete them to take them off of the list
+Step 4: once all tasks are completed it takes you to the congratulations screen where it also displays your totals
+Step 5: navigate to the profile button to view how many of each task has been completed and how many tasks overall have been completed
+Step 6: navigate to settings to view the custom task and delete task buttons if you want to delete tasks you can select multiple tasks, with the custom task button you can only make one at a time and select the difficulty easy, medium or hard.
+Step 7: open Credits
+
 **Location**
 
 The code for our application is located in the main branch
