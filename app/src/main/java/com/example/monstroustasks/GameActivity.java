@@ -45,6 +45,11 @@ public class GameActivity extends AppCompatActivity {
         LinearLayout taskContainer = findViewById(R.id.task_container);
         ArrayList<Button> taskButtons = new ArrayList<>();
 
+        int maxWidth = 200;
+        if (game.getMonsters().size() > 5) {
+            maxWidth *= 5.0 /game.getMonsters().size();
+        }
+
         // huge loop!
         // this adds a monster to the top of the screen as well as our buttons for defeating them to their
         // respective linear layouts
@@ -80,8 +85,8 @@ public class GameActivity extends AppCompatActivity {
             monster.setImageResource(getResources().getIdentifier(String.format("%s_%d", difficulty, game.getMonsters().get(i).getId()), "drawable", getPackageName()));
 
             monster.setAdjustViewBounds(true);
-            monster.setMaxWidth(200);
-            monster.setMaxHeight(200);
+            monster.setMaxWidth(maxWidth);
+            monster.setMaxHeight(maxWidth);
 
             monsterContainer.addView(monster);
             taskContainer.addView(button);
