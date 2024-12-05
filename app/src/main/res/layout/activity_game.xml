@@ -26,7 +26,7 @@
 
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:layout_gravity="center"
         android:orientation="vertical"
         android:clipToPadding="false">
@@ -41,13 +41,14 @@
 
 
     <Button
-        android:layout_height="wrap_content"
+        android:id="@+id/end_game_button"
         android:layout_width="wrap_content"
-        android:text="Complete Session"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="#4CAF50"
-        android:id="@+id/end_game_button"
-        tools:ignore="HardcodedText" />
+        android:text="Complete Session"
+        android:textColor="@color/white"
+        tools:ignore="HardcodedText,TextContrastCheck" />
 
     <View
         android:layout_width="0dp"
@@ -59,7 +60,8 @@
         android:layout_height="110dp"
         android:src="@drawable/bottom_border"
         android:scaleType="fitXY"
-        android:layout_gravity="bottom" />
+        android:layout_gravity="bottom"
+        tools:ignore="ContentDescription" />
 
 
 </LinearLayout>

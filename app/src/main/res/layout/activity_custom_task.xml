@@ -13,7 +13,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_centerVertical="true"
             android:layout_width="412dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editText"
@@ -101,7 +101,7 @@
                 android:backgroundTint="#4CAF50"
                 android:text="Confirm"
                 android:textStyle="bold"/>
-        </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
 
 
 
@@ -113,7 +113,7 @@
             android:layout_marginBottom="-120dp"
             android:src="@drawable/bottom_border" />
 
-    </RelativeLayout>
+
 
 
 
