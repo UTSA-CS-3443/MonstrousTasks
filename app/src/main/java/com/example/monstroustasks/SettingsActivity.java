@@ -15,11 +15,11 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
 
-        Button home_button = findViewById(R.id.home_button);
-        Button delete_tasks = findViewById(R.id.delete_custom_tasks);
-        Button add_task = findViewById(R.id.add_custom_tasks);
+        Button homeButton = findViewById(R.id.home_button);
+        Button deleteTasks = findViewById(R.id.delete_custom_tasks);
+        Button addTask = findViewById(R.id.add_custom_tasks);
 
-        home_button.setOnClickListener(new View.OnClickListener() {
+        homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(SettingsActivity.this, MainActivity.class);
@@ -27,7 +27,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        delete_tasks.setOnClickListener(new View.OnClickListener() {
+        deleteTasks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(SettingsActivity.this, DeleteTasksActivity.class);
@@ -35,7 +35,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        add_task.setOnClickListener(new View.OnClickListener() {
+        addTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(SettingsActivity.this, AddTaskActivity.class);
