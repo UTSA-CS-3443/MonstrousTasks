@@ -2,6 +2,11 @@ package com.example.monstroustasks.model;
 
 import androidx.annotation.NonNull;
 
+/**
+ * A class representation of a Task, detailing the task's name and difficulty scaled to an integer.
+ *
+ * @author BitByBit
+ */
 public class Task {
     private String taskName;
     private int difficulty;

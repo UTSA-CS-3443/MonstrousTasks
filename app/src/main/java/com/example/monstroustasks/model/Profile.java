@@ -14,6 +14,12 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
+/**
+ * A class representing a Profile, storing all of the user's history of game sessions.
+ * A Profile is initialized with loadProfile(), which loads all of the GameSaves into the class.
+ *
+ * @author BitByBit
+ */
 public class Profile {
     ArrayList<GameSave> saves;
 
@@ -23,6 +29,7 @@ public class Profile {
     public void loadProfile(Context context) {
         saves = new ArrayList<>();
         try {
+            // We initially try to open a profile.csv.
             InputStream inputStream = context.openFileInput("profile.csv");
 
             if (inputStream != null) {
@@ -39,42 +46,22 @@ public class Profile {
                 inputStream.close();
             }
         } catch (IOException e) {
-            Log.e("ERROR: loadProfile()", "Could not find tasks.csv... creating placeholder profile.csv.");
+            // We catch an exception opening the file, likely meaning the file does not exist.
+            // Therefore, we create a file!
+            Log.e("ERROR: loadProfile()", "Could not find profile.csv... creating placeholder profile.csv.");
 
             try {
                 OutputStream outputStream = context.openFileOutput("profile.csv", Context.MODE_PRIVATE);
                 OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
                 BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
-                bufferedWriter.write("0,2,1\n" +
-                        "2,4,1\n" +
-                        "0,0,1\n" +
-                        "1,3,2\n" +
-                        "8,0,0\n" +
-                        "2,0,1");
+                bufferedWriter.write("0,0,0\n");
 
                 bufferedWriter.close();
                 outputStreamWriter.close();
                 outputStream.close();
 
-                try {
-                    InputStream inputStream = context.openFileInput("profile.csv");
-
-                    if (inputStream != null) {
-                        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-                        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                        String receiveString = "";
-
-                        while ((receiveString = bufferedReader.readLine()) != null) {
-                            saves.add(new GameSave(Integer.parseInt(receiveString.split(",")[0]), Integer.parseInt(receiveString.split(",")[1].trim()), Integer.parseInt(receiveString.split(",")[2])));
-                        }
-
-                        bufferedReader.close();
-                        inputStreamReader.close();
-                        inputStream.close();
-                    }
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                // we can then do a single recursive call to loadProfile() since our file has been generated.
+                loadProfile(context);
             } catch (IOException ed) {
                 Log.e("loadProfile() ERROR", "Uh oh!");
             }
@@ -94,6 +81,8 @@ public class Profile {
             outputStreamWriter.close();
             outputStream.close();
         } catch (IOException e) {
+            // we had an issue opening profile.csv. This means it was deleted after creating the file in loadProfile().
+            // not cool!
             throw new RuntimeException(e);
         }
     }
@@ -110,6 +99,11 @@ public class Profile {
         return saves.size();
     }
 
+    /*
+    getTotalEasy(), getTotalMedium(), and getTotalHard() generate the total amount of
+    easy, medium, and hard monsters the user has defeated over the entirety of their
+    game sessions.
+     */
     public int getTotalEasy() {
         int sum = 0;
         for (int i = 0; i < saves.size(); i++) {

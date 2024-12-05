@@ -15,12 +15,21 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
+/**
+ * A class representation for a list of tasks.
+ * These are gathered from tasks.csv.
+ * Some tasks are generated as placeholders to let users get started with generic tasks,
+ * but these can be deleted at anytime.
+ *
+ * @author BitByBit
+ */
 public class TaskList {
     ArrayList<Task> taskList;
 
     public void loadTasks(Context context) {
         taskList = new ArrayList<Task>();
         try {
+            // Attempt to open tasks.csv
             InputStream inputStream = context.openFileInput("tasks.csv");
 
             if (inputStream != null) {
@@ -37,6 +46,7 @@ public class TaskList {
                 inputStream.close();
             }
         } catch (IOException e) {
+            // tasks.csv did not exist, therefore we must create it!
             Log.e("ERROR: loadTasks()", "Could not find tasks.csv... creating tasks.csv.");
 
             try {
@@ -54,25 +64,8 @@ public class TaskList {
                 outputStreamWriter.close();
                 outputStream.close();
 
-                try {
-                    InputStream inputStream = context.openFileInput("tasks.csv");
-
-                    if (inputStream != null) {
-                        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-                        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                        String receiveString = "";
-
-                        while ((receiveString = bufferedReader.readLine()) != null) {
-                            taskList.add(new Task(receiveString.split(",")[0].trim(), Integer.parseInt(receiveString.split(",")[1].trim())));
-                        }
-
-                        bufferedReader.close();
-                        inputStreamReader.close();
-                        inputStream.close();
-                    }
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+                // we can do a single recursive call back to loadTasks() now that we created tasks.csv.
+                loadTasks(context);
             } catch (IOException ed) {
                 Log.e("loadTasks() ERROR", "Uh oh!");
             }
@@ -92,6 +85,11 @@ public class TaskList {
         }
     }
 
+    /**
+     * Saves the tasks to tasks.csv
+     * @param context           Context: context for the currently open activity instance
+     * @throws FileNotFoundException
+     */
     public void saveTasks(Context context) throws FileNotFoundException {
         try {
             OutputStream outputStream = context.openFileOutput("tasks.csv", Context.MODE_PRIVATE);
@@ -105,10 +103,17 @@ public class TaskList {
             outputStreamWriter.close();
             outputStream.close();
         } catch (IOException e) {
+            // this happens if tasks.csv no longer exists. saveTasks() is not called before loadTasks(),
+            // so if this happens, something wrong must've happened!
             throw new RuntimeException(e);
         }
     }
 
+    /**
+     * Finds a task in the taskList
+     * @param taskName      String: task name
+     * @return              boolean: whether the task was found or not.
+     */
     public boolean findTask(String taskName) {
         for (int i = 0; i < this.getSize(); i++) {
             if (taskName.toLowerCase().equals(this.getTaskList().get(i).getTaskName().toLowerCase())) {
